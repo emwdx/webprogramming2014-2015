@@ -1,0 +1,88 @@
+2. How many people in the population are male? Find the percentage of male citizens in each district.
+
+People.find({gender:"m"}).count()
+2479, which is 49.58%
+
+for(var i = 0;i<=12;i++){
+var numOfMales = People.find({gender:"m",district:i}).count();
+var numOfPeople = People.find({district:i}).count()
+console.log(100*numOfMales/numOfPeople);
+}
+
+In each district (0 to 12):
+42.857142857142854
+51.41242937853107
+44.086021505376344
+54.02684563758389
+50.085470085470085
+48.24561403508772
+51.851851851851855
+49.91680532445923
+47.293447293447294
+48.611111111111114
+43.95061728395062
+52.80898876404494
+50.19230769230769
+
+3. What percentage of the entire population is in District 1?
+
+People.find({district:1}).count()/5000
+0.0708 or 7.08%
+
+4. What percentage of people in District 2 or District 3 are women?
+
+numOfWomen = People.find({district:2,gender:"f"}).count()+People.find({district:3,gender:"f"}).count()
+numOfPeople = People.find({district:2}).count()+People.find({district:3}).count()
+percentWomen = numOfWomen*100/numOfPeople
+49.79338842975206%
+
+5. How many people have a last name of 'Smith' in the entire population?
+People.find({lastName:"Smith"}).count()
+38
+
+
+6. Complete the table below for District 5 for the number of people in each category:
+male: People.find({district:5,gender:"m"}).count()
+220
+female: People.find({district:5,gender:"f"}).count()
+236
+named 'John': People.find({district:5,firstName:"John"}).count()
+4
+job is a soldier or factory worker: People.find({district:5,job:"soldier"}).count()+People.find({district:5,job:"factory-worker"}).count()
+159
+income is greater than 8000:
+People.find({district:5,income:{$gte:8000}}).count()
+392
+Are male and have an income greater than 8000:
+People.find({district:5,gender:"m",income:{$gte:8000}}).count()
+190
+
+7. How many soldiers are there in the entire population?
+People.find({job:'soldier'}).count()
+960
+
+8. How many women are doctors?
+People.find({job:'doctor',gender:"f"}).count()
+35
+
+9. Which district has the greatest number of lawyers?
+for(var i = 0;i<=12;i++){
+var numOfLawyers = People.find({job:'lawyer',district:i}).count();
+console.log("district " + i + ": " + numOfLawyers + " lawyers");
+}
+
+district 0: 2 lawyers
+district 1: 8 lawyers
+district 2: 1 lawyers
+district 3: 9 lawyers
+district 4: 18 lawyers
+district 5: 8 lawyers
+district 6: 3 lawyers
+district 7: 10 lawyers
+district 8: 6 lawyers
+district 9: 5 lawyers
+district 10: 4 lawyers
+district 11: 10 lawyers
+district 12: 8 lawyers
+
+Therefore district 4 has the most lawyers!

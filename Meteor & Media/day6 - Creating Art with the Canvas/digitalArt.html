@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+ 
+<html>
+<head>
+  <title>Digital Art</title>
+<style>
+    
+#canvas{
+    
+ border: solid gray 1px;   
+    
+}
+    
+</style> 
+</head>
+ 
+<body>
+ 
+    <canvas width="800" height="500" id = 'canvas'></canvas>
+   
+  <script>
+   
+      var canvas = document.getElementById('canvas'); 
+      var ctx = canvas.getContext("2d");
+      /*
+      var width = 50;
+      for (var i = 0;i*width<canvas.width;i++){
+          
+        for (var j = 0;j*width<canvas.height;j++){
+            
+            triangle(i*width,j*width,50);    
+            
+        }
+      }
+      */
+      /*
+      
+      var numOfTriangles = 100;
+      for (var i = 0;i<numOfTriangles;i++){
+       var radius = 200; 
+       triangle(radius*Math.cos(2*Math.PI*i/numOfTriangles) + 0.4*canvas.width,
+                radius*Math.sin(2*Math.PI*i/numOfTriangles)+0.4*canvas.height,
+               0.8*i);   
+          
+      }
+      */
+      for(var i = 0;i<100;i++){
+      drawHexagon(canvas.width*Math.random(),canvas.height*Math.random(),10);
+      }
+      /*
+      triangle(canvas.width/2,canvas.height/2,50);
+      triangle(canvas.width/3,canvas.height/2,20);
+      triangle(2*canvas.width/3,canvas.height/2,80);
+      */
+     /*
+      var image = new Image();
+      image.onload = function(){
+          
+       console.log('Image Loaded');   
+       ctx.drawImage(image,0,0,canvas.width,canvas.height);
+       //myDrawings();      
+          
+      }
+      image.src = "tilman1.jpg";
+      
+      */
+      
+      //triangle(200,200,70);
+      //triangle(300,300,10);
+      function triangle(x,y,width){
+      
+      ctx.beginPath();
+      ctx.moveTo(x,y);
+      ctx.lineTo(x+width,y);
+      ctx.lineTo(x+0.5*width, y+ 0.5*Math.sqrt(3)*width);
+      ctx.closePath();
+      ctx.stroke();    
+                
+      }
+      
+      
+      
+      
+      function myDrawings(){
+      //Draw a black box
+      ctx.fillStyle='black';
+      ctx.fillRect(150,200,30,30);    
+      ctx.fillRect(300,200,30,30);    
+      //Draw a straight line from (200,350) to (350,380)
+        ctx.beginPath();
+        ctx.moveTo(200,350);
+        ctx.lineTo(350,380);
+        ctx.lineWidth = 1.0;
+        ctx.strokeStyle = "blue";
+        ctx.stroke();
+
+      //Draw a circle at (250,250) of radius 200
+        ctx.beginPath();
+        ctx.lineWidth=2.0;
+        ctx.strokeStyle = "limegreen";
+        ctx.arc(250,250,200,0,Math.PI*2,true);
+        ctx.stroke();
+          
+      //Draw a quarter circle of radius 100 centered at 300,50
+        ctx.beginPath();
+        ctx.lineWidth=2.0;
+        ctx.strokeStyle = "rgb(14,50,180)";
+        ctx.arc(300,50,100,0,Math.PI*1/2,false); //
+        ctx.stroke();  
+          
+     //Draw a three-quarter circle of radius 50 centered at 70,100
+        ctx.beginPath();
+        ctx.lineWidth=2.0;
+        ctx.strokeStyle = "rgb(14,50,180)";
+        ctx.arc(70,100,50,0,Math.PI*1/2,true); //
+        ctx.stroke();  
+          
+      //Draw a filled path
+        ctx.beginPath();
+        var startX = 250;
+        var startY = 250;
+        ctx.moveTo(startX,startY);
+        ctx.lineTo(startX+10,startY + 50);
+        ctx.lineTo(startX-20,startY+80);
+        ctx.lineTo(startX-30,startY - 20);
+        ctx.closePath();
+        ctx.lineWidth = 2.0;
+        ctx.strokeStyle = "red";
+        ctx.fillStyle = "black";
+        ctx.stroke(); 
+        ctx.fill();
+          
+          
+      }
+      
+      function drawHexagon(x,y,radius) {
+    ctx.fillStyle = "rgb(182, 178, 73)";
+    ctx.beginPath();
+    ctx.moveTo(x + radius * (2 * sind(54) - cosd(72)), y + radius * (sind(72) - 2 * cosd(30)));
+    ctx.lineTo(x + radius * (2 * sind(54) - cosd(72) + 1), y + radius * (sind(72) - 2 * cosd(30)));
+    ctx.lineTo(x + radius * (2 * sind(54) - cosd(72) + 3 / 2), y + radius * (sind(72) - cosd(30)));
+    ctx.lineTo(x + radius * (2 * sind(54) - cosd(72) + 1), y + radius * sind(72));
+    ctx.lineTo(x + radius * (2 * sind(54) - cosd(72)), y + radius * sind(72));
+    ctx.lineTo(x + radius * (2 * sind(54) - cosd(72) - 1 / 2), y + radius * (sind(72) - cosd(30)));
+    ctx.fill();
+}
+function drawMeetingArea() {
+    ctx.fillStyle = "rgb(56, 110, 38)";
+    ctx.beginPath();
+    ctx.moveTo(startX + radius * (2 * sind(54) - cosd(72)), startY + radius * sind(72));
+    ctx.lineTo(startX + radius * (2 * sind(54) - cosd(72) - 1 / 2), startY + radius * (sind(72) - cosd(30)));
+    ctx.lineTo(startX + radius * sind(54) * (2 - sind(48) * cosd(36) / sind(66) / sind(84)), startY - radius * sind(48) * sind(54) * sind(36) / sind(66) / sind(84));
+    ctx.lineTo(startX + 2 * radius * sind(54), startY);
+    ctx.fill();
+}
+function drawCircles() {
+    ctx.strokeStyle = "rgb(195, 187, 158)";
+    ctx.beginPath();
+    ctx.arc(startX + radius * (2 * sind(54) - cosd(72)), startY + radius * (sind(72) - 2 * cosd(30)), radius, 0, 2 * Math.PI, true);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(startX, startY, radius, 0, 2 * Math.PI, true);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(startX + radius * (2 * sind(54) - cosd(72) + 1 / 2), startY + radius * (sind(72) - cosd(30)), radius, 0, 2 * Math.PI, true);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(startX + radius * (2 * sind(54) - cosd(72) + 3 / 2), startY + radius * (sind(72) - cosd(30)), radius, 0, 2 * Math.PI, true);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(startX + radius * (2 * sind(54) - cosd(72)), startY + radius * sind(72), radius, 0, 2 * Math.PI, true);
+    ctx.stroke();
+}
+function sind(num) {
+    return Math.sin(num * Math.PI / 180);
+}
+function cosd(num) {
+    return Math.cos(num * Math.PI / 180);
+}
+function tand(num) {
+    return Math.tan(num * Math.PI / 180);
+}
+ </script>
+
+</body>
+</html>

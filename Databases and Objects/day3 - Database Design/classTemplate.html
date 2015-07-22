@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<script src = "../../../jquery/jquery-1.11.0.min.js"></script>
+<head>
+   
+<title>Ice Cream Survey</title>
+
+</head>
+
+<body>
+<h1>What is your favorite type of ice cream?</h1>
+<form name = "iceCreamForm">
+<select id = "flavor">
+<option value = "chocolate">Chocolate</option>
+<option value = "vanilla">Vanilla</option>
+<option value = "strawberry">Stawberry</option>
+<option value = "other">Other</option>
+</select>  
+<p></p>
+<input type = "text" id = "name" placeholder="Enter your name">   
+<p></p>
+ <select id = "house">
+<option value = "R">Red</option>
+<option value = "Y">Yellow</option>
+<option value = "G">Green</option>
+<option value = "B">Blue</option>
+</select>  
+<p></p>
+ <select id = "gender">
+<option value = "M">male</option>
+<option value = "F">female</option>
+</select> 
+    <p></p>
+Enter your grade:
+<input type = "number" min = "6" max = "12">
+<p></p>
+<button id = "submit">VOTE</button>   
+</form>
+   
+</body>
+
+</html>
+
+<script>
+
+'click #submit':function(e){
+e.preventDefault();
+var flavor = $("#flavor").val();
+var grade = $("#grade").val();
+var house = $("#house").val();
+var gender = $("#gender").val();
+var name = $("#name").val();
+var newDocument={name:name,grade:grade,house:house,gender:gender,flavor:flavor};
+Votes.insert(newDocument);
+
+
+
+}    
+}
+
+    
+    
+    
+    
+
+</script>

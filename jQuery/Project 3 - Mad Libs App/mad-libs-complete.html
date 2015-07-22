@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html><head> <title>jQuery Events Activity</title> 
+<link rel = "stylesheet" href = "css/page.css">
+<script src="js/jquery-2.1.1.min.js"></script> 
+<script src ="js/library.js"></script>
+</head>
+<body>
+    
+<header><h1> Mileaux's <span id = "mileauxAdjective"></span> Mad-Lib Generator.</h1></header>
+
+<section id = "wordEntry">
+ 
+<ul>
+Enter your words below:
+<li id = "word1">
+<input type = "text" id = "food" class = "text-input" placeholder = "Enter a singular type of food."></li>
+<li id = "word2">
+<input type = "text" id = "color" class = "text-input" placeholder = "Enter a color."></li>
+<li id = "word3">
+<input type = "text" id = "adjective" class = "text-input" placeholder = "Enter an adjective."></li>
+<li id = "word4">
+<input type = "text" id = "country" class = "text-input" placeholder = "Enter a country in the world."></li>
+<li id = "word4">
+<input type = "text" id = "fruit" class = "text-input" placeholder = "Enter a plural fruit."></li>
+<li id = "word5">
+<input type = "text" id = "amountOfMoney" class = "text-input" placeholder = "Enter a number of RMB."></li>
+</ul>    
+<button id = "submit-button">Make my Mad Lib!</button>
+</section>
+     
+    
+
+<section id = "mad-lib-text">
+The most delicious <span id = "foodText1" class = "red"> </span> is made in the nation of <span id = "countryText" class = "red"></span>. This is because there is an abundance of <span id = "colorText" class = "red"></span> <span id = "fruitText" class = "red"></span>, which is the most important ingredient. Most local chefs believe that it is crucial not to cook the <span id = "foodText2" class = "red"> </span> for too long, so that it does not become <span id = "adjectiveText" class = "red"> </span>. A single plate can be purchased at almost any local restaurant for the equivalent of <span id = "amountOfMoneyText" class = "red"> </span> RMB in local currency.  
+<p></p>
+<button id = "reset-button">Reset!</button>
+    
+</section>
+    
+
+</body>
+</html>
+
+<script>
+
+$(document).ready(function() { 
+
+$('#mileauxAdjective').html(chooseRandomAdjective());    
+    
+$('#submit-button').click(function(){
+    
+var food = $('#food').val();
+var color = $('#color').val();
+var adjective = $('#adjective').val();
+var country = $('#country').val();
+var fruit = $('#fruit').val();
+var amountOfMoney = $('#amountOfMoney').val();
+
+$('#foodText1').html(food);
+$('#foodText2').html(food);
+$('#colorText').html(color); 
+$('#adjectiveText').html(adjective);
+$('#countryText').html(country);
+$('#fruitText').html(fruit); 
+$('#amountOfMoneyText').html(amountOfMoney);
+    
+$('#mad-lib-text').show();
+$('#wordEntry').hide();    
+});
+
+$('#reset-button').click(function(){
+    
+$('#mad-lib-text').hide();
+$('#wordEntry').show();  
+$('input').val('');
+    
+});
+    
+});
+
+function chooseRandomAdjective(){
+    
+adjectives = ['Amazing','Ridiculous','Stupendous','Remarkable','Dutiful','Fantastic','Impressive','Filibusterish','Spendiferous','Miraculous','Dependable','Super','Outlandish'];
+    
+return chooseElement(adjectives);
+     
+}
+    
+</script>

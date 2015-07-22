@@ -1,0 +1,33 @@
+.flight{
+margin-top:10px;
+margin-bottom:10px;
+border: 1px solid #aaa;
+border-radius:10px;
+background-color:#aaa;
+height:20%;
+}
+
+.bg-info{
+border-radius:10px;    
+    
+}
+
+.footer{
+    
+border-top: 1px;
+margin:10px;
+    
+}
+
+.linkbar{
+background-color:#aaa;
+border-radius:10px;    
+height:100%;   
+}
+
+.mainContent{
+ height:100%;   
+    
+    
+}
+

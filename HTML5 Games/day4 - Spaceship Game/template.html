@@ -1,0 +1,77 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8" />
+	<title>Space Game</title>
+	<script type="text/javascript" src="phaser.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var game = new Phaser.Game(800, 600, Phaser.WEBGL, '', { preload: preload, create: create, update: update });
+
+var blockSpeed = 20;
+  
+    
+function preload() {
+  game.load.image('ship', 'assets/thrust_ship2.png');
+    game.load.image('bullet', 'assets/bullet0.png');
+    game.load.image('block','assets/yellowblock.png');
+  
+
+}
+
+    
+
+function create() {
+game.physics.startSystem(Phaser.Physics.ARCADE);
+   
+ //Add the movable blocks
+blocks = game.add.group();
+blocks.enableBody = true;
+    
+for (var i = 0; i < 5; i++)
+    {
+        //  Create the blocks
+        var block = blocks.create((i+1) * game.world.width/7, Math.round(Math.random()*game.world.height*0.7), 'block');
+        block.body.velocity.y = (0.5+Math.random())*blockSpeed;
+
+       
+    }
+    
+//Adding text:    
+//scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#ccc' });
+    
+}
+
+function update() {
+
+    
+    
+
+    
+    
+}
+
+function hitBlock (bullet, block) {
+    
+    // Removes the block from the screen
+    block.kill();
+
+    //  Add 10 points and update the score
+    score += 10;
+    scoreText.text = 'Score: ' + score;
+
+}
+ 
+
+</script>
+
+</body>
+</html>

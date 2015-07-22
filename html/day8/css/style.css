@@ -1,0 +1,15 @@
+body {
+    
+ font-family:'Helvetica';   
+ background-color:#E4E0D3;
+
+}
+
+.section{
+    
+background-color:rgb(254,251,239); 
+margin:5px;
+padding:5px;
+height:100%;    
+}
+

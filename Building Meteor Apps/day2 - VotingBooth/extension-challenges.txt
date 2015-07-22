@@ -1,0 +1,7 @@
+Additional challenges:
+
+    *Add a helper that indicates the total number of votes received in the footer template.
+    
+    *Add a button that lets someone say 'none of these' if they don't want to choose any of the three pictures. Include helpers that count up these votes.
+    
+    *

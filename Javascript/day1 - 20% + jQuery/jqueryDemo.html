@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html><head> <title>jQuery goes to DOM-ville</title> 
+<link rel = "stylesheet" href = "css/page.css">
+<script src="js/jquery-1.11.0.min.js"></script> 
+</head>
+<body>
+    
+<button id="move_up">Move Up</button>
+<button id="move_down">Move Down</button>
+<button id="color">Change Color</button>
+<button id="disappear">Disappear/Re-appear</button>
+    
+<div id="change_me">Make Me Do Stuff!</div> 
+<div id = "dblClickMe">Double Click me!</div>    
+    
+<div id = "mouseover">Move the cursor inside this box.</div>
+</body>
+</html>
+
+<script>
+$(document).ready(function() { 
+    
+$("#move_up").click( function() {
+    
+$("#change_me").animate({top:30,left:400},200); //If you change one of these numbers, it will change the position. Another number changes the speed. Figure out which is which.
+
+});//end move_up
+    
+        
+$("#move_down").click( function() {
+    
+    $("#change_me").animate({top:500},2000);
+    
+    
+});//end move_down 
+    
+$("#color").click( function() {
+    
+newColor = prompt("What color do you want this to be?")
+if(newColor==''){
+    newColor = 'black'
+}
+    
+$("#change_me").css("color", newColor); //Change this line to different colors. Can you make a different part of the page change color also?
+
+});//end color
+
+    
+$("#disappear").click( function() { 
+    
+    $("#change_me").toggle("slow");
+    
+});//end disappear 
+
+$("#dblClickMe").dblclick( function(){
+    
+ alert('Message');
+    //Make an alert that says something more interesting when the double click message is double clicked
+    
+});
+
+$("#mouseover").hover(function(){
+        
+    $("#mouseover").css("background-color","AntiqueWhite");
+    $("#mouseover").html("Now you've changed this box forever.");
+                          
+});
+    
+
+});//end doc ready
+    
+</script> 

@@ -1,0 +1,103 @@
+function function1(number){
+
+return (2*number+1);
+
+}
+
+function function2(number){
+
+return (number - 5);
+
+}
+
+function function3(a){
+
+return a*a;
+
+}
+
+Warm-Up:
+Determine the values of each expression below without entering them on your computer!
+
+function1(5);
+function2(5);
+function3(5);
+function1(function2(15));
+function3(function2(function1(6)));
+
+function happyBirthdayTo(you){
+
+console.log('Happy Birthday ' + you);
+
+}
+
+function happyBirthdayGreeting(you){
+
+return 'Happy Birthday ' + you;
+
+}
+
+function isEven(number){
+
+return (number%2==0);
+
+}
+
+function isPrime(number){
+numberIsPrime = true; //set initial value to true
+
+if(number==1){ //1 isn't prime, so return a false value
+return false;
+
+}
+
+else{
+for(var i=2;i<=Math.sqrt(number);i++){
+
+
+if(number%i==0){
+
+numberIsPrime = false;
+
+}
+}
+
+return numberIsPrime;
+
+}
+
+}
+
+for(i=2;i<100;i++){
+
+if(isPrime(i)){
+console.log(i + ' is Prime');
+}
+
+else{
+
+console.log(i + ' is NOT prime');
+
+}
+
+}
+
+primeNumbers = []
+for(i=2;i<1000;i++){
+
+if(isPrime(i)){
+primeNumbers.push(i);
+}
+
+}
+
+names = [1,2,3,'tiffany','dominick','tanay','andy','luke']
+names[0];
+names[4];
+names.length;
+names[1]+names[2];
+names[3]+',' + names[4];
+names.push('mileaux');
+names.pop('mileaux');
+
+

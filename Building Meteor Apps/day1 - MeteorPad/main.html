@@ -1,0 +1,71 @@
+
+
+
+
+<head>
+  <title>Favorite Numbers</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  
+</head>
+
+<body>
+
+
+{{>main}}
+{{>responses}}
+
+
+</body>
+
+<!--
+
+One thing to notice about the templates in this file is how they are named. 
+
+Using Blaze, we have been doing this:
+<script type = "text/spacebars" name = "main">
+
+
+</script>
+
+Meteor lets you use this:
+<template name = "main">
+
+</template> 
+
+Much simpler. You'll need to switch these in the file below.
+
+
+
+
+-->
+
+
+<template name = "main">
+
+<div class = "container text-center">
+<h1>Enter your name and favorite number below.</h1>    
+<input type = "text" id = "name" placeholder = "Name">    
+<input type = "number" id = "number" placeholder = "Favorite Number">  
+<button id = "submitButton">Submit</button>  
+</div>
+
+</template>
+
+<script type = "text/spacebars" name = "responses">
+<div id = "responses">
+Here are the responses to the survey:
+{{#each response}}
+{{>responseItem}}
+{{/each}}
+
+</div>
+</script>
+
+<script type = "text/spacebars" name = "responseItem">
+<div class = "responseItem">
+
+{{name}}'s favorite number is <span class = "green">{{number}}</span>. This number squared is <span class = "green">{{numberSquared}}</span>.
+
+</div>
+
+</script>

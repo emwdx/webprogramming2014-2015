@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel = "stylesheet" href = "bootstrap/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "css/style.css"> 
+<script src = "js/jquery-2.1.1.min.js"></script>
+<script src = "bootstrap/js/bootstrap.min.js"></script>    
+
+    
+<title>MileauxChat</title>
+    
+<!--Enter templates below this line.-->
+    
+<script type="text/spacebars" name="main">
+ <body> 
+{{>twoNumbers}}
+ </body>
+ 
+</script>
+
+<script type = "text/spacebars" name = "chatRoomHeader">
+<div class = "container">
+<div class = "row">
+<div class = "col-md-4 col-md-offset-4">
+<h1 class = "text-center">MileauxChat</h1>
+<h3>Room: <span class = "text-success">{{roomName}}</span></h3>
+
+</div>
+</div>
+</div>
+</script>
+
+<script type = "text/spacebars" name = "chatMessageEntry">
+<div class = "container" style="background-color:{{backgroundColor}}">
+<div class = "row">
+<div class = "col-md-4 col-md-offset-4">{{seconds}}
+<input type = "text" id = "chatMessageText">
+<button class = "btn btn-small" id = "chatSendMessage">Send Message</button>
+</div>
+</div>
+</div>   
+</script>
+    
+<script type = "text/spacebars" name = "chatMessageList">
+<div class = "container">
+<div class = "row">
+<div class = "col-md-6 col-md-offset-3">
+Messages:
+<div id = "messageList">
+
+{{>chatMessages}}
+
+</div>
+
+
+</div>
+</div>
+</div>
+    
+</script>
+ 
+<script type = "text/spacebars" name = "chatMessages">
+{{#each messages}}
+<div class = "row bg-success rounded ">
+<div class = "col-md-4 ">
+<img src = "{{imageURL}}">
+{{username}}
+</div>
+<div class = "col-md-8">
+{{messageText}}
+</div>
+
+</div>
+{{/each}}
+</script>    
+    
+<script type = "text/spacebars" name = "chatFooter">
+<div class = "container">
+<div class = "row">
+<div class = "col-md-6 col-md-offset-3 text-center">
+Download the new MileauxChat App by visiting the App Store.
+</div>
+</div>
+</div>    
+    
+    
+</script>
+
+<script type = "text/spacebars" name = "twoNumbers">
+<div class = "container">
+<div class = "row">
+<div class = "col-md-6 col-md-offset-3 text-center">
+number 1: <input type = "number" value = "0" id = "numberOneInput">
+number 2: <input type = "number" value = "0" id = "numberTwoInput">
+</div>
+</div>
+</div>       
+<div class = "container">
+<div class = "row">
+<div class = "col-md-3 text-center">
+sum: 5
+</div>
+<div class = "col-md-3 text-center">
+product: 4
+</div>
+<div class = "col-md-3 text-center">
+difference: -3
+</div>
+<div class = "col-md-3 text-center">
+quotient: 0.25
+</div>
+</div>
+</div>       
+
+    
+</script>
+                                        
+    
+    
+<!--Put all templates above this line-->
+    
+<script src="js/blaze.js"></script>
+<script src = "js/templatesComplete.js"></script>
+
+<!--Do not change the above two lines.-->
+    
+</head>
+      
+<body>
+    
+</body>
+    
+</html>

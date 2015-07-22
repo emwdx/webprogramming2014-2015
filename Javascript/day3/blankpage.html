@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Javascript Page</title>
+<script src = "js/challenges.js"></script>
+
+</head>
+
+<body>
+<h1 id = "greeting"></h1>
+</body>
+
+</html>
+
+<script>
+
+var greeting = document.getElementById('greeting');
+if(typeof(myName)=='undefined'){
+greeting.innerHTML = "You didn't name your variable myName. Check the code please!";  
+
+}
+else{
+greeting.innerHTML = "Hello, " + myName;
+}
+
+if(typeof(myColor)!='undefined'){
+
+document.bgColor = myColor;
+    
+}
+
+
+</script>

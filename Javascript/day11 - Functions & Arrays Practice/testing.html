@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Javascript Page</title>
+<script src = "js/jquery-1.11.0.min.js"></script>
+<script src = "js/library.js"></script>    
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script src = "js/testing/function-array-testing.js"></script>
+<script src = "function-array-practice.js"></script>
+<script>
+var function_list =[squareArea,fullName,circleInformation,stringToArray,removeSpaces,dayOfWeek,searchArray,maxArray,minArray,isPrime];
+    
+for(i=0;i<function_list.length;i++){
+if(!function_list[i]){console.log('function ' + i + ' is missing');}    
+}
+
+var numCorrect = 0;    
+if(squareArea(5,'miles')===squareArea_test(5,'miles')){
+ console.log('squareArea is good');
+ numCorrect++;
+}
+if(fullName('Mileaux','Boudberg')===fullName_test('Mileaux','Boudberg')){
+ console.log('fullName is good');
+ numCorrect++;
+}   
+if(circleInformation(7.5)[0]===circleInformation_test(7.5)[0]){
+ console.log('circleInformation is good');
+ numCorrect++;
+} 
+if(stringToArray('no,this,is,not,a,good,time')===stringToArray_test('no,this,is,not,a,good,time')){
+ console.log('stringToArray is good');
+ numCorrect++;
+} 
+if(removeSpaces('remove the spaces from this one buddy')===removeSpaces_test('remove the spaces from this one buddy')){
+ console.log('removeSpaces is good');
+ numCorrect++;
+} 
+if(dayOfWeek(4)===dayOfWeek_test(4)){
+ console.log('dayOfWeek is good');
+ numCorrect++;
+}     
+var testArray = [3,1,5,7,6,2,9,8];
+if(searchArray(testArray,4)===searchArray_test(testArray,4)){
+ console.log('searchArray is good');
+ numCorrect++;
+}   
+if(maxArray(testArray)===maxArray_test(testArray)){
+ console.log('maxArray is good');
+ numCorrect++;
+}   
+if(minArray(testArray)===minArray_test(testArray)){
+ console.log('minArray is good');
+ numCorrect++;
+} 
+if(isPrime(1000099)===isPrime_test(1000099)){
+ console.log('isPrime is good');
+ numCorrect++;
+} 
+if(numCorrect==9){console.log('score is 5')}
+else if(numCorrect==8){console.log('score is 4')}
+else{console.log('score is 3')}
+
+            
+
+    
+</script>

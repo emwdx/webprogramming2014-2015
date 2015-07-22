@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html><head> <title>Checkout</title> 
+<link rel = "stylesheet" href = "css/page.css">
+<script src="js/jquery-2.1.1.min.js"></script> 
+<script src ="js/library.js"></script>
+</head>
+<body>
+<table id = "itemList">
+<tr><td>Product name</td>
+    <td>Unit Price</td>
+    <td>Quantity</td>
+    <td>Total Product Cost (RMB)</td>
+</tr> 
+<tr><td>Mileaux Brand Soda</td>
+    <td>10 RMB</td>
+    <td><input id = "sodaQuantity" type = "number" value="0" min = "0"></td>
+    <td><span id = "sodaTotal"></span> RMB</td>    
+</tr>  
+<tr><td>Mileaux Brand Canned Tuna</td>
+    <td>20 RMB </td>
+    <td><input id = "tunaQuantity" type = "number" value="0" min = "0"></td>
+    <td><span id = "tunaTotal"></span>  RMB</td>    
+</tr>  
+<tr><td>Mileaux Brand Umbrella</td>
+    <td>45 RMB </td>
+    <td><input id = "umbrellaQuantity" type = "number" value="0" min = "0"></td>
+    <td><span id = "umbrellaTotal"></span>  RMB</td>    
+</tr>  
+<tr><td>Mileaux Brand Beach-balls</td>
+    <td>10 RMB </td>
+    <td><input id = "bballsQuantity" type = "number" value="0" min = "0"></td>
+    <td><span id = "bballsTotal"></span>  RMB</td>    
+</tr>      
+<tr><td>Mileaux Brand Badminton Set</td>
+    <td>65 RMB </td>
+    <td><input id = "badmintonQuantity" type = "number" value="0" min = "0"></td>
+    <td><span id = "badmintonTotal"></span>  RMB</td>    
+</tr>
+<tr><td>Mileaux Brand Marbles</td>
+    <td>15 RMB </td>
+    <td><input id = "marblesQuantity" type = "number" value="0"></td>
+    <td><span id = "marblesTotal"></span>  RMB</td>    
+</tr>  
+</table>
+
+<div id = "showTotalCost">
+<button id = "calculateTotal">Calculate My Total:</button><p></p>
+Total cost: <span id = "grandTotal">0</span> RMB
+</div>
+    
+<button id = "purchaseButton">Purchase?</button>
+</body>
+</html>
+
+<script>
+
+var prices = [10,20,45,10,65,15];
+var inputNames = ['soda','tuna','umbrella','bballs','badminton','marbles'];
+    
+$(document).ready(function() {
+/*    
+$('#sodaQuantity').on('change',function(e){
+
+var value = 10*parseInt($('#sodaQuantity').val());
+    
+$('#sodaTotal').html(value);    
+    
+});
+    
+$('#tunaQuantity').on('change',function(e){
+
+var value = 20*parseInt($('#tunaQuantity').val());
+    
+$('#tunaTotal').html(value);    
+    
+});
+$('#umbrellaQuantity').on('change',function(e){
+
+var value = 45*parseInt($('#umbrellaQuantity').val());
+    
+$('#umbrellaTotal').html(value);    
+    
+});
+$('#bballsQuantity').on('change',function(e){
+
+var value = 10*parseInt($('#bballsQuantity').val());
+    
+$('#bballsTotal').html(value);    
+    
+});
+
+$('#badmintonQuantity').on('change',function(e){
+
+var value = 65*parseInt($('#badmintonQuantity').val());
+    
+$('#badmintonTotal').html(value);    
+    
+});
+$('#marblesQuantity').on('change',function(e){
+
+var value = 15*parseInt($('#marblesQuantity').val());
+    
+$('#marblesTotal').html(value);    
+    
+});
+*/
+    
+$('input').on('change',function(e){
+    
+var target = $(e.target); //identify the input that changed
+var id = target.attr('id'); //find the id of the element
+var value = parseFloat($('#'+id).val()); //get the quantity from the input
+var name = id.split('Q')[0];
+var idIndex = searchArray(inputNames,name);
+var cost = prices[idIndex]//find the costs from the prices array
+var quantityName = id.split('Q')
+
+$('#' + quantityName[0]+'Total').html(value*cost);
+
+
+    
+});
+
+$('#calculateTotal').click(function(){
+var grandTotal = 0;
+for(var i = 0;i<inputNames.length;i++){
+ 
+ newValue =parseInt($('#'+inputNames[i]+'Total').html()); 
+ if(newValue){grandTotal+=newValue};
+    
+}
+
+$('#grandTotal').html(grandTotal);
+                        
+});
+});    
+</script>

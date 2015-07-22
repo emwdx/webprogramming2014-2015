@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel = "stylesheet" href = "css/style.css"> 
+<script src = "js/data.js"></script>
+
+<!--Enter templates below this line.-->
+    
+<script type="text/spacebars" name="main">
+ <body> 
+ <div id = "container">
+ 
+ This is the main template.<p></p>
+ This is still on the main template.
+ 
+ {{#each data}}
+ 
+ {{>result}}
+ 
+ {{/each}}
+ 
+ </div>   
+ </body>
+ 
+</script>
+
+<script type = "text/spacebars" name = "result">
+
+<div class = "result">
+
+<div class = "data">Name: {{name}} </div>
+<div class = "data">Vote: {{vote}}</div>
+
+</div>
+      
+</script>    
+    
+<script type = "text/spacebars" name = "form">
+    
+<h1>What is your favorite type of ice cream?</h1>
+<form name = "iceCreamForm">
+<select id = "flavor">
+<option value = "chocolate">Chocolate</option>
+<option value = "vanilla">Vanilla</option>
+<option value = "strawberry">Stawberry</option>
+<option value = "other">Other</option>
+</select>  
+<p></p>
+<input type = "text" id = "name" placeholder="Enter your name">   
+<p></p>
+ <select id = "house">
+<option value = "R">Red</option>
+<option value = "Y">Yellow</option>
+<option value = "G">Green</option>
+<option value = "B">Blue</option>
+</select>  
+<p></p>
+ <select id = "gender">
+<option value = "M">male</option>
+<option value = "F">female</option>
+</select> 
+    <p></p>
+Enter your grade:
+<input type = "number" min = "6" max = "12">
+<p></p>
+<button id = "submit">VOTE</button>   
+</form>
+     
+    
+</script>    
+
+    
+<!--Put all templates above this line-->
+    
+<script src="js/blaze.js"></script>
+<script src = "js/templates.js"></script>
+
+<!--Do not change the above two lines.-->
+    
+</head>
+      
+<body>
+    
+</body>
+    
+</html>

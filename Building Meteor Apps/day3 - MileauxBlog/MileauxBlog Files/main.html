@@ -1,0 +1,74 @@
+<head>
+  <title>MileauxBlog</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+ </head>
+<body> 
+  {{>main}}
+</body>
+  
+<template name = "main">
+<div class = "container-fluid">
+{{>headerbar}}
+<hr id = "top">
+{{>posts}}
+
+{{>insertPost}}
+
+{{>logInToView}}
+
+</div>
+</template>
+
+<template name = "headerbar">
+<div class = "row">
+<div class = "col-md-4 col-md-offset-4 text-center">
+<h1>Mileaux<span class = "text-success">Blog</span></h1>
+   
+    </div>
+</div>
+</template>
+
+<template name = "posts">
+
+    
+
+</template>
+
+<template name = "insertPost">
+<h3>Add New Post:</h3>
+<div class="form-group">
+    <label for="postTitle">Post Title</label>
+    <input type="text" class="form-control" id="postTitle" placeholder="Enter the title of the new post.">
+  </div>
+<div class="form-group">
+    <label for="postText">Post Text</label>
+    <textarea class="form-control" id="postText" placeholder="Enter the new post here" rows = "5"></textarea>
+  </div>
+<div class = "form-group">
+<label for="isPrivate">Show post without logging in?</label>
+<input type="checkbox" checked id = "isPrivate" >
+</div>
+<button class = "btn btn-primary" id = "submitPost">Submit Post</button>
+
+</template>
+
+<template name = "post">
+<div class = "row">
+<div class = "col-md-8 col-md-offset-2">
+<h3 class = "text-center">{{title}}</h3>
+<span class = "text-left">Posted {{postTime}} by {{author}}</span>
+<div class = "post">
+    {{{postText}}}
+</div>
+
+<hr id = "top">
+</div>
+</div>
+</template>
+
+<template name = "logInToView">
+<div class = "bg-warning">
+<h4 class = "text-center">You must log in to see this post.</h4>
+</div>
+</template>
+

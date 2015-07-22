@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html><head> <title>jQuery Events Activity</title> 
+<link rel = "stylesheet" href = "css/page.css">
+<script src="js/jquery-2.1.1.min.js"></script> 
+<script src ="js/library.js"></script>
+</head>
+<body>
+<header>
+<h1>LEVEL <span id = "currentLevel">1</span></h1>
+<button id = 'click-button'>Click Me!</button>
+<h1>You have clicked <span id = "click-count"></span> times.
+    
+<p>You reach the next level in <span id = "clicks-left"></span> clicks.</p>
+</h1>
+    
+<h1 id = "prize">Win a prize at Level 10!</h1>
+</header>
+
+</body>
+</html>
+
+<script>
+
+$(document).ready(function() { 
+
+//Write your event handling code here    
+var clickCount = 0;
+var currentLevel = 1;
+var nextLevel = 10*Math.pow(2,currentLevel)+15;
+$('#click-count').html(clickCount);
+$('#clicks-left').html(nextLevel);
+$('#click-button').click(function(){
+    
+
+if(clickCount < (nextLevel-1)){
+clickCount++;
+clicksLeft=nextLevel - clickCount;    
+}
+else{
+clickCount++;
+currentLevel++;
+nextLevel = nextLevel + 10*Math.pow(2,currentLevel)+15;
+clicksLeft = nextLevel - clickCount;
+}
+$('#click-count').html(clickCount);
+$('#clicks-left').html(clicksLeft);
+$('#currentLevel').html(currentLevel);
+});
+    
+setInterval(function(){
+    
+if(currentLevel<10){    
+    $('#click-button').click()
+}
+    
+},1)
+
+});
+  
+</script>

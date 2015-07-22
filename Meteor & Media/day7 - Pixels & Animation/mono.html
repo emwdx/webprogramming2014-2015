@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+ 
+<html>
+<head>
+  <title>Pixel Fun</title>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <style>
+   </style>
+</head>
+ 
+<body>
+
+<canvas id = "canvas" width = "800" height = "600">
+ Test     
+      
+</body>
+      
+<script>
+var c = document.getElementById('canvas');
+c.width = 800;
+c.height = 600;
+var ctx = c.getContext('2d');
+
+function doIt() {
+  var imageData = ctx.getImageData(0,0, 800, 600);
+  var length = imageData.data.length / 4;
+  var pixelTotal;
+    
+/* This loop makes the image grayscale by averaging the red, green, and blue pixels.
+  for (var i = 0; i < length; i++){
+      pixelTotal = (1/3)*(imageData.data[i * 4 + 0]+imageData.data[i * 4 + 1] +imageData.data[i * 4 + 2]); 
+      
+      imageData.data[i * 4 + 0] = pixelTotal;   //Red
+      imageData.data[i * 4 + 1] = pixelTotal;   //Green
+      imageData.data[i * 4 + 2] = pixelTotal;   //Blue
+  }
+*/  
+   
+  
+    
+    
+  /*  This loop makes all the pixels in the image inverse.
+  for (var i = 0; i < length; i++){
+      imageData.data[i * 4 + 0] = 255 - imageData.data[i * 4 + 0];   //Red
+      imageData.data[i * 4 + 1] = 255 - imageData.data[i * 4 + 1];   //Green
+      imageData.data[i * 4 + 2] = 255 - imageData.data[i * 4 + 2];   //Blue
+  }
+  
+  */
+    
+  /*  This loop makes all the pixels in the image inverse.
+  for (var i = 0; i < length; i++){
+      imageData.data[i * 4 + 0] = 255 - imageData.data[i * 4 + 0];   //Red
+      imageData.data[i * 4 + 1] = 255 - imageData.data[i * 4 + 1];   //Green
+      imageData.data[i * 4 + 2] = 255 - imageData.data[i * 4 + 2];   //Blue
+  }
+  
+  */ 
+    
+ /*       
+  for (var i = 0; i < length; i++){
+      imageData.data[i * 4 + 0] = Math.round(50*(imageData.data[(i+1) * 4 + 0]- imageData.data[i * 4 + 0]));   //Red
+      imageData.data[i * 4 + 1] = Math.round(50*(imageData.data[(i+1) * 4 + 1]- imageData.data[i * 4 + 1]));   //Green
+      imageData.data[i * 4 + 2] = Math.round(50*(imageData.data[(i+1) * 4 + 2]- imageData.data[i * 4 + 2]));   //Blue
+  }
+*/  
+  
+    
+  // Comment this line to see original image
+  ctx.putImageData(imageData, 0, 0);
+}
+
+var image = new Image();
+image.onload = function() {
+  ctx.drawImage(image, 0, 0);
+  doIt();
+}
+image.src = 'pencils.jpg';      
+      
+</script>
+</html>

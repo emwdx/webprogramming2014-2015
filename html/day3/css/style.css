@@ -1,0 +1,95 @@
+body{
+    
+ font-family:'Helvetica';
+ 
+    
+}
+    
+#container{
+    
+ margin: 10px;
+ padding: 10px;
+       
+ background:#FFCC17;   
+    
+}
+#logo{
+    
+    
+ width:10%;
+float:left;
+    
+    
+}
+#companyTitle{
+    
+ width:90%;
+ float:right;
+ font-size: 30px;
+ text-align: center;
+    
+}
+
+nav{
+        
+     display:block;   
+     background:#EECC01;
+     height: 50px;
+     
+     margin:10px;
+        
+        
+}
+    
+header{
+    
+ height:120px;
+ background:#DDBB01;
+ margin:10px;
+    
+}
+    
+
+ul {
+    
+ list-style-type: none;
+    margin: 0;
+    padding: 0;   
+    
+}
+    
+    
+    li{
+    
+ float:left;
+ width: 20%;
+    text-transform: uppercase;
+    font-size-adjust: auto;
+    text-align: center;
+    
+}
+    
+section{
+    
+    
+    
+ 
+ background:#DDBB01;
+ margin:10px;
+ padding:5px;
+ 
+    
+    
+    
+}
+    
+footer{
+    
+height:30px;
+ background:"#CCAA01";
+ margin:10px;    
+border-top: solid black ;
+ padding: 10px;
+    
+    
+}

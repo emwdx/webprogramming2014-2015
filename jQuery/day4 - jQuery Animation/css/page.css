@@ -1,0 +1,105 @@
+body{
+    
+ background: white;
+ font-family: 'Verdana';
+ font-size: 1.5em;
+ color:black;
+ height: 600px;
+ overflow: hidden;
+    
+}
+
+.center{
+    
+ text-align: center;   
+    
+}
+header{
+ display:none;    
+ text-align:center;   
+    
+}
+
+input{
+height:25px;
+font-size: 20px;
+width:80%;
+    
+}
+
+#signUpBox{
+ position:relative;
+ top:100%;
+ left:0%;
+ width:40%;
+ height: 200px;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top:10px;
+ background-color: rgb(102,102,102);
+ border: double black 2px;
+ padding: 5px;
+     
+    
+}
+
+#submit{
+ height: 30px;
+ background-color:rgb(132,171,39);
+ font-size: 20px;
+    
+}
+
+#signUpModel{
+height:40px;
+font-size: 30px;
+margin:10px;
+
+    
+}
+
+#totalMessage{
+    
+font-size: 18px;
+color: rgb(132,171,39);
+display:none;    
+}
+
+
+#congratulations{
+width:50%;
+margin-left: auto;
+margin-right: auto;
+position:relative;
+top:-40%;
+height:100%;    
+background-color: rgb(102,102,102);
+color:rgb(132,171,39);
+display:none;
+text-align:center;
+}
+
+section{
+position:relative;
+left:-100%;
+width: 50%;
+margin-left: auto;
+margin-right: auto;
+border: black 1px dotted;
+border-radius:5px;
+margin-top: 5px;
+margin-bottom: 5px; 
+padding:3px;
+background:rgb(132,171,39);
+
+}
+
+
+
+footer{
+    
+ text-align: center;   
+ width:80%;
+ margin-left:auto;
+ margin-right:auto;
+}

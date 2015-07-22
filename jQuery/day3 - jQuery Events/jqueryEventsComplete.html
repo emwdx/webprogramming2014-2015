@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html><head> <title>jQuery Events Activity</title> 
+<link rel = "stylesheet" href = "css/page.css">
+<script src="js/jquery-2.1.1.min.js"></script> 
+<script src ="js/library.js"></script>
+</head>
+<body>
+<header><h1>This is the header.</h1></header>
+
+<section id = "section1">This is section 1.</section>
+<section id = "section2">This is section 2.
+    
+<ul>
+This is a list of items.
+<li id = "item1">Item 1</li>
+<li id = "item2">Item 2</li>
+<li id = "item3">Item 3</li>
+<li id = "item4">Item 4</li>
+<li id = "item5">Item 5</li>
+</ul>        
+    
+</section>
+<section id = "section3" class = "blue">This is section 3. It is blue.</section>
+    
+
+
+<p class = "blue" id = "bottomParagraph">This paragraph is also blue.</p>
+
+<footer><h1>This is the footer. This text is way too big to be in a footer.</h1></footer>
+</body>
+</html>
+
+<script>
+
+$(document).ready(function() { 
+
+//Write your event handling code here    
+    
+$('header').click(function(){
+    
+console.log('The header was clicked.');      
+    
+});
+    
+$('.blue').dblclick(function(){
+    
+console.log('A blue element was double-clicked.');    
+    
+});
+    
+$('section').mouseenter(function(){
+    
+console.log('The mouse entered a section element.');    
+    
+});
+
+$('section').mouseleave(function(){
+    
+console.log('The mouse left a section element.');    
+    
+});
+
+$('body').dblclick(function(){
+      
+console.log('The body was double-clicked.');    
+      
+}); 
+
+$('li').mouseenter(function(){
+
+ $(this).css('font-size','2.5em');   
+    
+});
+
+$('li').mouseleave(function(){
+
+ $(this).css('font-size','1em');    
+    
+});
+
+
+
+
+});
+    
+</script>

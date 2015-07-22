@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<meta lang="en">
+<html>
+<head>
+<title>Survey Form</title>
+<link rel = "stylesheet" href = "../bootstrap/css/bootstrap.min.css">
+</head>
+    
+    
+<body>
+<div class = "container">
+ 
+<form name = "survey" action = "/survey/" method = "POST">
+<div class = "row">
+<div class = "col-md-4">
+<h3>Survey Form</h3>    
+ Tell me a bit about yourself.   
+</div>    
+</div> 
+    
+<div class = "row">
+<div class = "col-md-4">
+What is your name?
+<input type = "text">
+    
+</div>    
+</div> 
+ 
+<div class = "row">
+<div class = "col-md-4">
+What is your password?
+<input type = "password">
+    
+</div>    
+</div> 
+    
+<div class = "row">
+<div class = "col-md-4">
+Do you like chocolate ice cream?
+<input type = "checkbox">
+    
+</div>    
+</div> 
+ 
+<div class = "row">
+<div class = "col-md-4">
+When is your birthday?
+<input type = "date">
+    
+</div>    
+</div> 
+    
+<div class = "row">
+<div class = "col-md-4">
+How many centimeters tall are you?
+<input type = "number" required>
+    
+</div>    
+</div> 
+
+<div class = "row">
+<div class = "col-md-4">
+Which day would you prefer to have a party?<p/>
+<label for="monday">Mon</label>
+<input type = "radio" name = "partyDay" id = "monday">
+<label for="tuesday">Tue</label>
+<input type = "radio" name = "partyDay" id = "tuesday">
+<label for="wednesday">Wed</label>
+<input type = "radio" name = "partyDay" id = "wednesday">
+<label for="thursday">Thu</label>
+<input type = "radio" name = "partyDay" id = "thursday">
+<label for="friday">Fri</label>
+<input type = "radio" name = "partyDay" id = "friday">
+    
+</div>    
+</div> 
+    
+<div class = "row">
+<div class = "col-md-4">
+Which house are you in?
+<select name = "house" id = "house">
+<option>Red</option>    
+<option>Blue</option>
+<option>Green</option>
+<option>Yellow</option>
+</select>
+    
+</div>    
+</div> 
+ <input type = "submit" value = "Submit">   
+
+
+    
+
+</form>     
+    
+    
+</div>  
+   
+</body>
+
+
+
+
+</html>

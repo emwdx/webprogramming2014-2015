@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>animation</title>
+	</head>
+	<body>
+    
+    <canvas id = "canvas" width = "256" height = "256"></canvas>
+		
+		<script>
+
+			var canvas, context;
+            canvas = document.getElementById('canvas');
+            context = canvas.getContext( '2d' );
+
+			animate();
+
+			
+			function animate() {
+
+				requestAnimationFrame( animate );
+				draw();
+
+			}
+
+			function draw() {
+
+				var time = new Date().getTime() * 0.002;
+				var x = Math.sin( time ) * 96 + 128; //Set the x-coordinate to change with time
+				var y = Math.cos( time * 0.9 ) * 96 + 128; //Set the y-coordinate to change with time
+
+				context.fillStyle = 'rgb(245,245,245)';
+				context.fillRect( 0, 0, 255, 255 );
+
+				context.fillStyle = 'rgb('+Math.round(x)+','+Math.round(y)+','+Math.round(0.5*(x+y))+')';
+				context.beginPath();
+				context.arc( x, y, 0.1*(x+y), 0, Math.PI * 2, true );
+				context.closePath();
+				context.fill();
+                
+                //Can you change this to animate something other than the circle? Rotate in a circle faster?
+                //Better yet, animate a green circle that rotates in the opposite direction.
+
+			}
+
+		</script>
+
+		
+		</div>
+	</body>
+</html>
+

@@ -1,0 +1,193 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8" />
+	<title>MileauxWorld</title>
+	<script type="text/javascript" src="phaser.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var game = new Phaser.Game(800, 600, Phaser.WEBGL, '', { preload: preload, create: create, update: update });
+    
+function preload() {
+
+    
+    
+    game.load.image('star', 'assets/star.png');
+    game.load.spritesheet('mileaux', 'assets/mileaux.png', 32, 32);
+    game.load.image('yellowblock','assets/yellowblock.png');
+    
+
+}
+
+var mileaux;
+var platforms;
+var cursors;
+
+var stars;
+var score = 0;
+var scoreText;
+var defaultSpeed = 300;
+var health= 1000;
+    
+
+function create() {
+
+    //  We're going to be using physics, so enable the Arcade Physics system
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+
+    //  A simple background for our game
+    
+
+    //  The platforms group contains the ground and the 2 ledges we can jump on
+    platforms = game.add.group();
+
+    //  We will enable physics for any object that is created in this group
+    platforms.enableBody = true;
+    
+
+    
+    
+    
+    // The mileaux and its settings
+    mileaux = game.add.sprite(32, game.world.height - 150, 'mileaux');
+    mileaux.anchor.setTo(.5,.5);
+    mileaux.scale.setTo(4,4);
+    
+
+    //  We need to enable physics on the mileaux
+    game.physics.arcade.enable(mileaux);
+
+    
+
+    mileaux.body.collideWorldBounds = true;
+    
+
+   
+    mileaux.animations.add('walk', [1, 2],7, true);
+    
+    
+    //  Finally some stars to collect
+    stars = game.add.group();
+    stars.enableBody = true;
+     //  We will enable physics for any star that is created in this group
+
+
+    //  Here we'll create 12 of them evenly spaced apart
+    for (var i = 0; i < 12; i++)
+    {
+        //  Create a star inside of the 'stars' group
+        var star = stars.create(i * 70, Math.round(Math.random()*game.world.height), 'star');
+
+       
+    }
+    
+  
+  
+    //  The score
+    scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#ccc' });
+    healthText = game.add.text(16, 60, 'Health: 50', { fontSize: '32px', fill: '#ccc' });
+    
+
+    //  Our controls.
+    cursors = game.input.keyboard.createCursorKeys();
+    
+}
+
+function update() {
+
+    //  Collide the mileaux and the stars with the platforms
+    game.physics.arcade.collide(mileaux, platforms);
+        
+    
+    //  Checks to see if the mileaux overlaps with any of the stars, if he does call the collectStar function
+    game.physics.arcade.overlap(mileaux, stars, collectStar, null, this);
+    
+    
+    //  Reset mileauxs velocity (movement)
+    mileaux.body.velocity.x = 0;
+    mileaux.body.velocity.y = 0;
+    
+    
+    if (cursors.left.isDown)
+    {
+        //  Move to the left
+        mileaux.body.velocity.x = -defaultSpeed;
+        mileaux.angle = -90;
+
+        mileaux.animations.play('walk');
+    }
+    else if (cursors.right.isDown)
+    {
+        //  Move to the right
+        mileaux.body.velocity.x = defaultSpeed;
+        mileaux.angle = 90;
+
+        mileaux.animations.play('walk');
+    }
+    
+    else if (cursors.up.isDown){
+        
+       //Move up 
+       mileaux.body.velocity.y = -defaultSpeed; 
+       mileaux.angle = 0; 
+       mileaux.animations.play('walk');
+    }
+    
+     else if (cursors.down.isDown){
+        
+       //Move up 
+       mileaux.body.velocity.y = defaultSpeed; 
+       mileaux.angle = 180; 
+       mileaux.animations.play('walk');
+    }
+    
+    else
+    {
+        //  Stand still
+        mileaux.animations.stop();
+        if(mileaux.body.position.x>game.world.width){
+            
+            mileaux.body.position.x =0;
+            
+        }
+        mileaux.frame = 0;
+    }
+    
+    if(health < 0){
+        
+      mileaux.kill();  
+      gameOverText = game.add.text(game.width*0.5, game.height*0.5, 'Game Over', { fontSize: '32px', fill: 'red' });
+    }
+    
+    else{
+        
+     health--; 
+   healthText.text = 'Health: ' + health;    
+        
+    }
+}
+
+function collectStar (mileaux, star) {
+    
+    // Removes the star from the screen
+    star.kill();
+
+    //  Add and update the score
+    score += 10;
+    scoreText.text = 'Score: ' + score;
+
+}
+ 
+
+</script>
+
+</body>
+</html>

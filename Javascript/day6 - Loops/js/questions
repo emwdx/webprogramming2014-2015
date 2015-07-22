@@ -1,0 +1,15 @@
+can there be different buttons for confirm?
+formulas to use for calculating the fare?
+change background when button is clicked?
+
+var yourNumber = parseInt(prompt('Enter a number between 1 and a million'));
+
+var guessedCorrectly = false;
+var myGuess = 1;
+while(!guessedCorrectly){
+guessedCorrectly = (yourNumber==myGuess);
+if(guessedCorrectly==false){
+myGuess++;
+}
+}
+alert('Your number is ' + myGuess);

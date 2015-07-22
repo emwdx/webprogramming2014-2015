@@ -1,0 +1,12 @@
+#messageList{
+ margin:20px;
+ border-bottom: solid gray 1px;
+ border-top: solid gray 1px;
+    
+}
+
+.rounded{
+ margin:10px;   
+ border-radius:10px;   
+    
+}

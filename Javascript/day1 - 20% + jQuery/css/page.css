@@ -1,0 +1,43 @@
+body{
+    
+ background: #EEE;
+ font-family: 'Helvetica';
+    
+}
+
+#change_me { 
+    position: absolute; 
+    top: 100px;
+    left: 400px;
+    font-size: 44px;
+}
+
+#dblClickMe {
+    
+ position: absolute;
+ top: 400px;
+ left: 400px;
+ font-size:44px;
+    
+}
+
+
+#move_up #move_down #color #disappear {
+    
+padding: 5px;
+height:20px;
+
+
+} 
+
+#mouseover{
+ position:absolute;
+ height:200px;
+ width:200px;
+ top: 400px;
+ left:800px;
+ background-color:#CCC;
+ border: black solid 1px;
+    
+    
+}

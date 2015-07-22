@@ -1,0 +1,15 @@
+body{
+    
+border: black 1px solid;
+ border-radius: 10px;
+ padding:10px;
+    
+}
+
+#purchaseButton{
+    
+ font-size: 18px;
+ background:#13f178;
+ border-radius: 10px;
+    
+}

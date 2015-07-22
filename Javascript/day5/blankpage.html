@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Javascript Page</title>
+<script src = "js/jquery-1.11.0.min.js"></script>
+<script src = "js/library.js"></script>
+<script>
+    
+    
+function buttonIsClicked(){
+
+    //Any code you want to run when the button is clicked goes after this line.
+
+//These are functions I wrote for you to get text values from a form.  
+var firstName = getFormText('#firstName'); //This gets the text in the form element with id of firstName.
+    
+var lastName = getFormText('#lastName');
+
+//This function gets a number from a form element with id of age.
+var age = getFormNumber('#age');
+    
+alert("Hello " + firstName + " " + lastName + "! \n You'll be " + (age + 3) + " in three years.");  
+    
+    
+}
+    
+</script>
+
+</head>
+
+<body>
+
+<input type = "text" id = "firstName" placeholder = "First Name" >
+<input type = "text" id = "lastName" placeholder = "Last Name">
+<input type = "number" id = "age" placeholder = "Your Age">
+<button onclick ="buttonIsClicked()">Press me!</button>
+</body>
+
+</html>
+

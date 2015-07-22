@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html><head> <title>Checkout</title> 
+<script src="js/jquery-2.1.1.min.js"></script> 
+
+</head>
+<body>
+<table id = "itemList">
+<tr><td>Product name</td>
+    <td>Unit Price</td>
+    <td>Quantity</td>
+    <td>Total Product Cost (RMB)</td>
+</tr> 
+<tr><td>Mileaux Brand Soda</td>
+    <td>10 RMB</td>
+    <td><input id = "sodaQuantity" type = "number" value="0" min = "0"></td>
+    <td><span id = "sodaTotal"></span> RMB</td>    
+</tr>  
+<tr><td>Mileaux Brand Canned Tuna</td>
+    <td>20 RMB </td>
+    <td><input id = "tunaQuantity" type = "number" value="0" min = "0"></td>
+    <td><span id = "tunaTotal"></span>  RMB</td>    
+</tr>  
+<tr><td>Mileaux Brand Umbrella</td>
+    <td>45 RMB </td>
+    <td><input id = "umbrellaQuantity" type = "number" value="0" min = "0"></td>
+    <td><span id = "umbrellaTotal"></span>  RMB</td>    
+</tr>  
+<tr><td>Mileaux Brand Beach-balls</td>
+    <td>10 RMB </td>
+    <td><input id = "bballsQuantity" type = "number" value="0" min = "0"></td>
+    <td><span id = "bballsTotal"></span>  RMB</td>    
+</tr>      
+<tr><td>Mileaux Brand Badminton Set</td>
+    <td>65 RMB </td>
+    <td><input id = "badmintonQuantity" type = "number" value="0" min = "0"></td>
+    <td><span id = "badmintonTotal"></span>  RMB</td>    
+</tr>
+<tr><td>Mileaux Brand Marbles</td>
+    <td>15 RMB </td>
+    <td><input id = "marblesQuantity" type = "number" value="0"></td>
+    <td><span id = "marblesTotal"></span>  RMB</td>    
+</tr>  
+</table>
+
+<div id = "showTotalCost">
+<button id = "calculateTotal">Calculate My Total:</button><p></p>
+Total cost: <span id = "grandTotal">0</span> RMB
+</div>
+    
+<button id = "purchaseButton">Purchase?</button>
+</body>
+</html>
+
+<script>
+

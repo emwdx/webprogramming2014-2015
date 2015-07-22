@@ -1,0 +1,83 @@
+<head>
+  <title>LinkShare</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div class = "container">
+
+{{>header}}
+{{#if currentUser}}
+{{>addLinks}}
+{{/if}}
+<hr>
+{{>linkList}}
+
+</div>
+
+
+</body>
+
+
+<template name = "header">
+<div class = "row">
+<div class = "col-md-8 text-center">
+<h2>MileauxLinx</h2>
+<h5>The best of the web...edited for dogs.</h5>
+</div>
+</div>
+<div class = "row">
+<div class = "col-md-8 text-center">
+{{>loginButtons}}
+</div>
+</div>
+</template>
+<template name = "addLinks">
+<div class = "row">
+<div class = "col-md-8">
+<div class="form-group">
+    <label for="linkTitle">Link Title</label>
+    <input type="text" class="form-control" id="linkTitle" placeholder="Enter link title">
+  </div>
+  <div class="form-group">
+    <label for="linkURL">Link URL</label>
+    <input type="text" class="form-control" id="linkURL" placeholder="URL">
+    <button id = "submitLink">Submit Link</button>
+  </div>
+  
+</div>
+</div>
+</template>
+<template name = "linkList">
+<div class = "row">
+<div class = "col-md-8 #linkList">
+Links:
+{{#each links}}
+{{>linkItem}}
+{{/each}}
+</div>
+</div>
+</template>
+
+<template name = "linkItem">
+
+<div class = "row bg-success border">
+<div class = "col-md-3">Votes:{{votes}} <button class = "voteForLink">Vote</button>
+{{#if isEMW}}
+<button class = "deleteLink">Delete</button>
+{{/if}}
+</div>
+<div class = "col-md-3 text-center">
+{{linkTitle}}
+</div>
+<div class = "col-md-3 text-center">
+<a href = "{{linkURL}}">{{linkURL}}</a>
+</div>
+<div class = "col-md-3 text-center">
+Added by: {{linkAddedBy}}
+</div>
+
+</div>
+</template>
+

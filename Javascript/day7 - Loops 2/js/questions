@@ -1,0 +1,29 @@
+why does a web browser let an infinite loop happen? DX
+Why does an infinite loop crash the browser? MB
+
+var myValue = 6;
+
+while(myValue<15){
+
+console.log("My value is " + myValue);
+myValue = myValue + 4;
+
+}
+
+for(myValue = 6; myValue<15; myValue = myValue+4){
+
+console.log("My value is " + myValue);
+
+}
+
+for(i = 2;i<=10;i++){
+
+console.log(i);
+
+}
+
+for(i=2;i<10,i=i+2){
+
+console.log(i);
+
+}

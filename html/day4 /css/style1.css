@@ -1,0 +1,32 @@
+body{
+    
+ font-family:'Futura';
+ background: rgb(78,173,100);
+    
+}
+    
+header{
+    
+ color:rgb(243, 154, 40); 
+ font-size: 50px;
+ border-radius: 15px;  
+ border: white solid 3px;
+ text-align: center;
+ background:rgb(211,225,193);
+ padding: 30px;
+ 
+}
+    
+section{
+    
+background:rgb(157, 213, 168);    
+border-radius: 5px;    
+}
+    
+footer{
+ background:rgb(157, 213, 168);    
+ font-style: italic;   
+ border-radius: 5px; 
+  
+}
+    

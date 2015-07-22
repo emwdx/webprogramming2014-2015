@@ -1,0 +1,31 @@
+body{
+    
+ font-family:'Helvetica Neue','Helvetica';   
+    
+    
+}
+
+#responses{
+  
+  margin: 10px;
+  border-top: dotted blue 2px;
+  padding: 5px;
+}
+
+.responseItem{
+  margin: 5px;
+  padding: 5px;
+  
+}
+
+.green{
+  
+  color: green;
+  
+}
+
+.text-center{
+  
+  text-align:center;
+  
+}

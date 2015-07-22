@@ -1,0 +1,19 @@
+#linkList{
+  
+ border: gray 1px black;
+ border-radius:5px;
+ margin:5px;
+ padding:5px;
+ height:500px;
+overflow:scroll;  
+  
+}
+
+.border{
+   border: gray 1px solid;
+ border-radius:5px;
+ margin:5px;
+ padding:5px;
+  
+  
+}

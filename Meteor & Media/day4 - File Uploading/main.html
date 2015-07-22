@@ -1,0 +1,183 @@
+<head>
+  <title>MileauxTV</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+ </head>
+
+  
+<template name = "main">
+<div class = "container-fluid">
+{{>header}}
+<hr id = "top">
+{{>yield}}
+    
+{{>footer}}
+
+</div>
+</template>
+
+<template name = "header">
+<div class = "container-fluid">
+<nav class = "navbar navbar-default navbar-inverse">
+        <div class = "container-fluid">
+            <div class = "navbar-header">
+            
+            <a class = "navbar-brand" href = "/">MileauxTV <span class = "glyphicon glyphicon-facetime-video"></span></a>
+            
+            </div>   
+            <ul class = "nav navbar-nav navbar-left">
+            
+            <li><a href = "/upload/">Upload!</a></li>
+            </ul>
+            <ul class = "nav navbar-nav navbar-right">
+                
+            <li><a href = "#">{{>loginButtons align = "right"}}</a></li>    
+                
+            </ul>
+        </div>
+</nav>                              
+               
+</div>
+</template>
+
+<template name = "welcome">
+<div class = "container">
+<div class = "jumbotron">
+<h2>Mileaux.</h2>
+    
+<h2>480p video.</h2>
+    
+<h1>You're welcome.</h1>
+</div>
+    
+    
+</div>
+<div class = "row">
+<div class = "col-md-6 col-md-offset-3">
+ <h3>Click on the video you would like to view.</h3>  
+</div>
+</div>
+   
+<div class = "row">
+    {{#each videoFound}}
+    {{>videoThumbnail}}
+    {{/each}}
+    {{#each videoFoundUL}}
+    {{>videoThumbnail}}
+    {{/each}}
+    
+</div>
+</template>
+
+<template name = "videoThumbnail">
+<div class = "col-md-4 videoLink">
+ <a href = "/view/{{_id}}"><h4>{{title}}</h4> </a>
+   
+        <p class = "text-center">uploaded by <span class = "text-info">{{postedBy}}</span> </p>  
+   
+ 
+</div>  
+</template>
+
+<template name = "footer">
+    
+<div class = "container">
+<hr>
+<em>MileauxTV and all of its contents are the property of the Mileaux Corporation, Copyright 2015. All rights reserved.</em>                 
+               
+</div>
+</template>
+
+<template name = "demo">
+
+The word is {{word1}}
+
+</template>
+
+
+
+<template name = "view">
+
+    {{#with selectedVideo}}
+<div class = "row">
+
+    <div class = "col-md-6 col-md-offset-3">
+    <h4>{{title}}</h4>
+    <video id = "video-player" width = "100%" autoplay  >
+    <source src = "/{{videoName}}.mov" type="video/mp4"> 
+   
+    <source src = "/{{videoName}}.webm" type="video/webm">  
+
+    </video>
+    </div>                 
+                 
+</div>
+    {{/with}}
+    
+    {{#if currentUser}}
+    {{>commentForm}}
+    {{/if}}
+    {{>showComments}}
+</template>
+
+<template name = "commentForm">
+
+
+<div class = "row">
+    <div class = "col-md-6 col-md-offset-3">
+    <form>
+        <label for = "videoComment">Comment</label>
+        <input class = "form-control" id = "videoComment" name = "videoComment">
+        <button class = "btn" id = "submitVideoComment">Submit Comment</button>
+    </form>
+    </div>    
+</div>    
+
+</template>
+
+<template name = "showComments">
+<div class = "row">
+    <div class = "col-md-6 col-md-offset-3">
+    <table class = "table">
+     {{#each comment}}
+     <tr>
+         <td>{{commentUser}}:</td><td>{{commentText}}</td>
+     </tr>
+     {{/each}}   
+     </table>
+    </div>    
+</div>
+
+
+</template>
+
+<template name = "loading">
+
+<div class = "row">
+<div class = "col-md-6 col-md-offset-3">
+<h2>MileauxTV is loading...</h2>    
+</div>    
+</div>
+
+</template>
+
+<template name = "uploadFiles">
+<div class = "row">
+<div class = "col-md-6 col-md-offset-3 text-center">
+ <h3>Upload your video!</h3>   
+    
+<div class = "form-group">
+<label for = "videoUploadTitle">Video Title</label>
+<input class = "form-control" name = "videoUploadTitle" id = "videoUploadTitle" value = "Mileaux Howling">
+</div>    
+
+<div class = "form-group">
+<label for = "videoUploadFile">Select video file: </label>
+<input type = "file" id = "videoUploadFile">  
+    
+</div> 
+    
+</div>    
+</div>
+
+
+</template>

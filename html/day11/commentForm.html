@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<meta lang="en">
+<html>
+<head>
+<title></title>
+<link rel = "stylesheet" href = "../bootstrap/css/bootstrap.min.css">
+</head>
+    
+    
+<body>
+   firstNameCorrect = (firstname=='Mileaux')
+    emailCorrect = (email=='mileaux@dog.com')
+    passwordCorrect = (password == 'snacksplussleep=fun')
+    gradeCorrect = (grade=='9')
+    houseCorrect = (house=='green')
+    commentCorrect = (comment=='Is it time to play?')
+<div class = "container">
+<form action = "http://172.27.104.6:9000/commentForm/" method="POST">    
+<div class = "row">
+<div class = "col-md-4 col-md-offset-4">
+
+<div class = "form-group">
+<label for="firstname">First Name:</label>
+<input type = "text" name = "firstname" id = "firstname" class = "form-control">
+</div>
+
+<div class = "form-group">
+<label for="email">Email Address</label>
+<input type = "email" name = "email" id = "email" class = "form-control">
+</div>
+
+<div class = "form-group">
+<label for="password">Password:</label>
+<input type = "password" name = "password" id = "password" class = "form-control">
+</div>
+
+<div class = "form-group">
+<label for="grade">Grade:</label>
+<select name = "grade" id = "grade" class = "form-control">
+<option value = ""></option>
+<option value = "9">Grade 9</option>
+<option value = "10">Grade 10</option>
+<option value = "11">Grade 11</option>
+<option value = "12">Grade 12</option>
+</select>
+</div>
+
+
+<div class = "form-group">
+<label for = "house">What house are you in?</label>  
+<select name = "house" class = "form-control">
+<option value = "red">red</option>
+<option value = "yellow">yellow</option>    
+<option value = "green">green</option>  
+<option value = "blue">blue</option>    
+</select>
+</div>
+<div class = "form-group">
+<label for = "comment">Enter your comments here.</label>
+<textarea name = "comment" id = "comment" rows = "4" cols = "50"></textarea>
+    
+</div>
+<div class = "form-group">
+    
+<input type = "submit" value = "Submit my comment" >    
+</div>   
+    
+    
+</div> 
+</div>
+    
+</form>    
+</div>  
+    
+</body>
+
+
+
+
+</html>

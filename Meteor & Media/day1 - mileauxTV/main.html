@@ -1,0 +1,93 @@
+<head>
+  <title>MileauxTV</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+ </head>
+
+  
+<template name = "main">
+<div class = "container-fluid">
+{{>header}}
+<hr id = "top">
+{{>yield}}
+    
+{{>footer}}
+
+</div>
+</template>
+
+<template name = "header">
+<div class = "container-fluid">
+<nav class = "navbar navbar-default navbar-inverse">
+        <div class = "container-fluid">
+            <div class = "navbar-header">
+            
+            <a class = "navbar-brand" href = "/">MileauxTV <span class = "glyphicon glyphicon-facetime-video"></span></a>
+            
+            </div>    
+    
+        </div>
+</nav>                              
+               
+</div>
+</template>
+
+<template name = "welcome">
+<div class = "container">
+<div class = "jumbotron">
+<h2>Mileaux.</h2>
+    
+<h2>480p video.</h2>
+    
+<h1>You're welcome.</h1>
+</div>
+    
+    
+</div>
+<div class = "row">
+<div class = "col-md-6 col-md-offset-3">
+ <h3>Click on the video you would like to view.</h3>  
+</div>
+</div>
+   
+<div class = "row">
+    {{#each videoFound}}
+    {{>videoThumbnail}}
+    {{/each}}
+    
+</div>
+</template>
+
+<template name = "videoThumbnail">
+<div class = "col-md-4">
+<h4>{{title}}</h4>
+    <a href = "/watch/" class = "videoLink">
+        <img src = "/{{thumbnail}}">   
+    </a>
+ 
+</div>  
+</template>
+
+<template name = "footer">
+    
+<div class = "container">
+<hr>
+<em>MileauxTV and all of its contents are the property of the Mileaux Corporation, Copyright 2015. All rights reserved.</em>                 
+               
+</div>
+</template>
+
+<template name = "view">
+
+    {{#with selectedVideo}}
+<div class = "row">
+
+    <div class = "col-md-6 col-md-offset-3">
+    <video id = "video-player" width = "100%" autoplay  >
+    <source src = "/{{videoName}}" type="video/mp4"> 
+        
+    </video>
+    </div>                 
+                 
+</div>
+    {{/with}}
+</template>

@@ -1,0 +1,29 @@
+LM how do you make the buttons do things? 
+JS how do you find the square root of a number?
+
+
+
+Which parts of the page do each of the selectors select?
+
+$('header')
+$('h3')
+$('ul')
+$('li')[2]
+$('li')
+
+setElementBackgroundColor('header','green')
+setElementBackgroundColor('#greeting','limegreen')
+setElementBackgroundColor($('li')[2],'red')
+setElementBackgroundColor($('ul')[1],'gray')
+
+$('header').html()
+
+setElementBackgroundColor('header','green');
+setElementBackgroundColor('#greeting','blue');
+setElementBackgroundColor($('li')[2],'red');
+setElementBackgroundColor($('li')[6],'cyan');
+setElementBackgroundColor($('ul')[1],'gray');
+$('#title').html('Weinberg/Mileaux Corp');
+$('#question-products').html('What types of (unnecessary) products does the Mileaux Corporation provide the world?');
+$('#believeList').append('<li>Adorable Puppy Kisses</li>')
+    

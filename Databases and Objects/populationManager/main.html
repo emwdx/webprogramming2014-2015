@@ -1,0 +1,48 @@
+<head>
+  <title>CITIZEN Database</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  
+</head>
+
+<body>
+  <div class="outer">
+    <div class="logo"></div>
+    <h1 class="title">Citizens</h1>
+    <div class="subtitle">Select a a person to get information about them.</div>
+    {{> peopleInformation}}
+  </div>
+</body>
+
+<template name="peopleInformation">
+
+ 
+    <div class="details">
+      <div class="name">{{fullName}}</div>
+      
+    <div class="message">Click a person to select them</div>
+  </div>
+  <ol class="leaderboard">
+    {{#each people}}
+      {{> person}}
+    {{/each}}
+  </ol>
+
+</template>
+
+<template name="person">
+  <li class="player {{selected}}">
+    <span class="name">{{fullName}}</span>
+    {{#if isSelected}}
+    <div class = "dataTable">
+      <table>
+      <tr>
+      <td>gender</td><td>district</td><td>job</td><td>income</td>
+      </tr>
+      <tr>
+      <td>{{gender}}</td><td>{{district}}</td><td>{{job}}</td><td>{{income}}</td>
+      </tr>
+      </table>
+      </div>
+      {{/if}}
+  </li>
+</template>

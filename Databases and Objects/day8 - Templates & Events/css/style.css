@@ -1,0 +1,28 @@
+#messageList{
+ margin:20px;
+ border-bottom: solid gray 1px;
+ border-top: solid gray 1px;
+    
+}
+
+.rounded{
+ margin:10px;   
+ border-radius:10px;   
+    
+}
+
+#bigNumber{
+ opacity:1; 
+ font-size: 100px;
+ transition:opacity 800ms ease-in;
+}
+
+.invisible{
+ opacity:0;   
+    
+}
+
+.red{
+    
+    color:red;
+}

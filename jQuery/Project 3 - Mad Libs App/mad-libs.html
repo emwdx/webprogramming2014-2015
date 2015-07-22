@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html><head> <title>Mad-Lib Generator</title> 
+<link rel = "stylesheet" href = "css/page.css">
+<script src="js/jquery-2.1.1.min.js"></script> 
+<script src ="js/library.js"></script>
+</head>
+<body>
+    
+<header><h1> Mileaux's <span id = "mileauxAdjective"></span> Mad-Lib Generator.</h1></header>
+
+<section id = "wordEntry">
+ 
+<ul>
+Enter your words below:
+<li id = "word1">
+<input type = "text" id = "word1" class = "text-input" placeholder = "Word 1"></li>
+</ul>    
+<button id = "submit-button">Make my Mad Lib!</button>
+</section>
+     
+    
+
+<section id = "mad-lib-text">
+Your text goes here. Here is word 1: <span id = "word1Text" class = "red"> </span> 
+    
+<p></p>
+<button id = "reset-button">Reset!</button>
+    
+</section>
+    
+
+</body>
+</html>
+
+<script>
+
+$(document).ready(function() { 
+
+$('#mileauxAdjective').html(chooseRandomAdjective());    
+    
+$('#submit-button').click(function(){
+    
+var word1 = $('#word1').val();
+
+$('#word1Text').html(word1);
+    
+});
+
+$('#reset-button').click(function(){
+
+    
+});
+    
+});
+
+function chooseRandomAdjective(){
+    
+adjectives = ['Amazing','Ridiculous','Stupendous','Remarkable','Dutiful','Fantastic','Impressive','Filibusterish','Spendiferous','Miraculous','Dependable','Super','Outlandish'];
+    
+return chooseElement(adjectives);
+     
+}
+    
+</script>

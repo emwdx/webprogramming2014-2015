@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html><head> <title>Get Your MileauxPad</title> 
+<link rel = "stylesheet" href = "css/page.css">
+<script src="js/jquery-2.1.1.min.js"></script> 
+<script src ="js/library.js"></script>
+</head>
+<body>
+<header><img src = "BBoneImages.png"></header>
+
+<section>
+<h1 class = 'center'>Click here to order the new MileauxPad 6 or 6 Plus.</h1>    
+</section>
+
+<div id = "signUpBox" class = "center">
+<input type = "email" placeholder = "Enter your email here." id = "signUpEmail"> 
+<select id = "signUpModel">I would like the...
+<option value = '1399'>MileauxPad 6 (1399 RMB) </option>
+<option value = '1699'>MileauxPad 6 With BaconBone Display (1699 RMB)</option>
+<option value = '1899'>MileauxPad 6 Plus (1899 RMB) </option>
+<option value = '2199'>MileauxPad 6 Plus With BaconBone Display (2199 RMB) </option> 
+</select>
+<p></p>    
+<span id = "totalMessage">Your total will be <span id = "totalAmount"></span> RMB. </span>
+<p></p>
+    
+<button id = 'submit'>Place My Order</button>
+</div>
+<div id = "congratulations">
+<h1>Your brand new MileauxPad is on its way.</h1>
+<p class = "center"><img src = "BBoneImages.png"></p>
+<h3>Your life is about to change for the better.</h3>
+</div>
+</body>
+</html>
+
+<script>
+
+$(document).ready(function() { 
+
+$('header').fadeIn(3000);
+$('section').animate({left:'0px'},5000);
+    
+$('section').click(function(){
+$('#signUpBox').animate({top:'100%'},1000);
+});
+
+
+
+$('#submit').click(function(){
+    
+$('#signUpBox').animate({left:'-10%'},300);
+    
+$('#signUpBox').animate({left:'150%'},800,function(){
+    
+$('section').slideUp();
+$('header').fadeOut(function(){
+    
+ $('#congratulations').fadeIn(500);   
+    
+});
+
+});
+
+   
+});
+    
+$('#signUpModel').change(function(){
+
+var modelPrice = $('#signUpModel').val();
+    
+$('#totalAmount').html(modelPrice);    
+$('#totalMessage').show();    
+});     
+    
+});    
+</script>
